@@ -4,8 +4,8 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        RemoveElement removeElement = new RemoveElement();
-        int output = removeElement.removeElement(new int[]{3,2,2,3}, 2);
+        ContainerWithMostWater containerWithMostWater = new ContainerWithMostWater();
+        int output=containerWithMostWater.maxAreaTwoPointer(new int[]{1,8,6,2,5,4,8,3,7});
         System.out.println(output);
     }
 }
