@@ -11,9 +11,3 @@ public class MaxSubarray {
         return maxSum;
     }
 }
-
-
-#Model:
-#- Two variable. currentSum and MaxSum
-#- deciding if to start a new sub array or carry the current subarray is imp
-#- use Math.Max to see which is greater in each iteration.
