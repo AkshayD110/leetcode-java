@@ -45,4 +45,23 @@ public class LenghtOfLongestValidSubstring {
         return result;
     }
 
+    public int longestValidSubstringOpt(String word, List<String> forbidden) {
+        Set<String> forbiddenSet = new HashSet<>(forbidden);
+        int maxSubStringLen = 0;
+        int left = 0;
+        int n = word.length();
+
+        for (int right = 0; right < n; right++) {
+            for (int k = 1; k <= 10 && right - k + 1 >= left; k++) { // check the last 10 characters or less
+                if (forbiddenSet.contains(word.substring(right - k + 1, right + 1))) {
+                    left = right - k + 2; // move left pointer past the forbidden substring
+                    break;
+                }
+            }
+            maxSubStringLen = Math.max(maxSubStringLen, right - left + 1);
+        }
+
+        return maxSubStringLen;
+    }
+
 }
