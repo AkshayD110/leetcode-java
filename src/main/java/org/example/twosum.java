@@ -11,12 +11,12 @@ public class twosum {
 
         for(int i=0; i< nums.length; i++) {
             diff = target-nums[i];
-            if (indexVal.containsKey(nums[i])){
-                result[0]=indexVal.get(nums[i]);
+            if(!indexVal.containsKey(diff)){
+                indexVal.put(nums[i],i);
+            }else {
+                result[0]=indexVal.get(diff);
                 result[1]=i;
                 return result;
-            }else {
-                indexVal.put(diff, nums[i]);
             }
         }
         return result;
